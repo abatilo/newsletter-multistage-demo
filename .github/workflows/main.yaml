@@ -58,5 +58,5 @@ jobs:
           load: true
           file: Dockerfile
           context: carbon
-          cache-from: type=s3,region=us-west-2,bucket=abatilo,prefix=buildx/carbon/,access_key_id=${AWS_ACCESS_KEY_ID},secret_access_key=${AWS_SECRET_ACCESS_KEY}
-          cache-to: type=s3,region=us-west-2,bucket=abatilo,prefix=buildx/carbon/,access_key_id=${AWS_ACCESS_KEY_ID},secret_access_key=${AWS_SECRET_ACCESS_KEY},mode=max
+          cache-from: type=s3,region=us-west-2,bucket=abatilo,prefix=buildx/carbon/,access_key_id=${{ env.AWS_ACCESS_KEY_ID }},secret_access_key=${{ env.AWS_SECRET_ACCESS_KEY }}
+          cache-to: type=s3,region=us-west-2,bucket=abatilo,prefix=buildx/carbon/,access_key_id=${{ env.AWS_ACCESS_KEY_ID }},secret_access_key=${{ env.AWS_SECRET_ACCESS_KEY }},mode=max
