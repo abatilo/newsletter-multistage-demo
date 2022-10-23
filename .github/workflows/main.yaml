@@ -25,7 +25,6 @@ jobs:
       - uses: docker/build-push-action@v3
         with:
           tags: carbon:latest
-          load: true
           file: Dockerfile
           context: carbon
   with-s3-cache:
@@ -55,7 +54,6 @@ jobs:
       - uses: docker/build-push-action@v3
         with:
           tags: carbon:latest
-          load: true
           file: Dockerfile
           context: carbon
           cache-from: type=s3,region=us-west-2,bucket=abatilo,prefix=buildx/carbon/,access_key_id=${{ env.AWS_ACCESS_KEY_ID }},secret_access_key=${{ env.AWS_SECRET_ACCESS_KEY }}
